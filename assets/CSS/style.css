@@ -41,3 +41,7 @@ input {
 input:focus {
     width: 100%;
 }
+
+.article-btn {
+    margin: 5px;
+}

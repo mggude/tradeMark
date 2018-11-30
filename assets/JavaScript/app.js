@@ -49,6 +49,19 @@
                 exDividendDate = quotes[x].exDividendDate;
                 console.log(fiftyTwoWkHigh, symbol, stockName, lastPrice, percentChange, openPrice);
                 };
+
+                database.ref().push({
+                    symbol: symbol,
+                    stockName: stockName,
+                    lastPrice: lastPrice,
+                    percentChange: percentChange,
+                    openPrice: openPrice,
+                    // fiftyTwoWkHigh: fiftyTwoWkHigh,
+                    // fiftyTwoWkLow: fiftyTwoWkLow,
+                    // dividendRate: dividendRate,
+                    // dividendYeild: dividendYeild,
+                    // exDividendDate: exDividendDate,
+                });
             addToTable ();
         });
     });
@@ -57,14 +70,10 @@
         $("tbody").append("<tr><th scope='row'>" + stockName +"</th> <td>" + lastPrice + "</td> <td>" + percentChange + "</td> <td>" + '52 High' + "</td> <td>" + '52 Low' + "</td></tr>");
     };
     
-    //Main Processes
-
-
-    //NYT - Tola's js
-
-    javascript 
-// Resources Page by Tola
-​
+//     //Main Processes
+//     //NYT - Tola's js
+//     // javascript 
+// // Resources Page by Tola
 // $(document).ready(function () {
 //  function apistuff() {
 //   apikey = "6ee03502d73e4ad2afb51c8061f7ae16";
@@ -86,8 +95,7 @@
 //   // Pick up search terms written in form 
 //   var searchTerm = $("#searchTerm").val().trim();
 //   console.log(searchTerm);
-// ​
-//   // Pick up number of results selected by user
+// ​  Pick up number of results selected by user
 //   nResults = $("#recordsRetrieve").val();
 //  });
 // });

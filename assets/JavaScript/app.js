@@ -88,7 +88,7 @@
 //   // Pick up search terms written in form 
 //   var searchTerm = $("#searchTerm").val().trim();
 //   console.log(searchTerm);
-// ​
+
 //   Pick up number of results selected by user
 //   nResults = $("#recordsRetrieve").val();
 //  });

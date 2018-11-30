@@ -29,6 +29,7 @@
     // SECTION: WATCHLIST TABLE
     $("#submitButton").on("click", function(event) {
         event.preventDefault();
+
         symbolInput = $("#symbolInput").val().trim();
         console.log("Input",symbolInput);
         var onDemand = new OnDemandClient();
@@ -36,35 +37,36 @@
         onDemand.setJsonP(true);
         onDemand.getQuote({symbols: symbolInput}, function (err, data) {
                 var quotes = data.results;
-                for (x in quotes) {
-                symbol = quotes[x].symbol;
-                stockName = quotes[x].name;
-                lastPrice = quotes[x].lastPrice;
-                percentChange = quotes[x].percentChange;
-                openPrice = quotes[x].open;
-                fiftyTwoWkHigh = quotes[x].fiftyTwoWkHigh;
-                fiftyTwoWkLow = quotes[x].fiftyTwoWkLow;
-                dividendRate = quotes[x].dividendRateAnnual;
-                dividendYeild = quotes[x].dividendYieldAnnual;
-                exDividendDate = quotes[x].exDividendDate;
-                console.log(fiftyTwoWkHigh, symbol, stockName, lastPrice, percentChange, openPrice);
-                };
-            addToTable ();
+                console.log("Results",data.results);
+                if (data.results != null) {
+                    for (x in quotes) {
+                        symbol = quotes[x].symbol;
+                        stockName = quotes[x].name;
+                        lastPrice = quotes[x].lastPrice;
+                        percentChange = quotes[x].percentChange;
+                        openPrice = quotes[x].open;
+                        fiftyTwoWkHigh = quotes[x].fiftyTwoWkHigh;
+                        fiftyTwoWkLow = quotes[x].fiftyTwoWkLow;
+                        dividendRate = quotes[x].dividendRateAnnual;
+                        dividendYeild = quotes[x].dividendYieldAnnual;
+                        exDividendDate = quotes[x].exDividendDate;
+                        console.log(fiftyTwoWkHigh, symbol, stockName, lastPrice, percentChange, openPrice);
+                        };
+                    addToTable ();
+                }
+                else{
+                    console.log("else part");
+                    $("#errorReport").text("Please Enter A Valid Stock Symbol");
+                }
         });
     });
     
     function addToTable () {
-        $("tbody").append("<tr><th scope='row'>" + stockName +"</th> <td>" + lastPrice + "</td> <td>" + percentChange + "</td> <td>" + '52 High' + "</td> <td>" + '52 Low' + "</td></tr>");
+        $("tbody").append("<tr><th scope='row'>" + stockName +"</th> <td>" + "$" + lastPrice + "</td> <td>" + percentChange + "%" + "</td> <td>" + "$" + "52 High" + "</td> <td>" + "$" + "52 Low" + "</td></tr>");
     };
     
     //Main Processes
-
-
     //NYT - Tola's js
-
-    javascript 
-// Resources Page by Tola
-​
 // $(document).ready(function () {
 //  function apistuff() {
 //   apikey = "6ee03502d73e4ad2afb51c8061f7ae16";
@@ -86,8 +88,8 @@
 //   // Pick up search terms written in form 
 //   var searchTerm = $("#searchTerm").val().trim();
 //   console.log(searchTerm);
-// ​
-//   // Pick up number of results selected by user
+
+//   Pick up number of results selected by user
 //   nResults = $("#recordsRetrieve").val();
 //  });
 // });

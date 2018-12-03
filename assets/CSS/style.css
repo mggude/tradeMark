@@ -1,9 +1,13 @@
 body, html {
     height: 100%;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     background-color: black;
     position: relative;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
 }
 
 .hero-image {
@@ -13,6 +17,8 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  border: solid black 2px;
+  border-bottom-color: #353a3f;
 }
 
 .hero-text {
@@ -24,24 +30,77 @@ body, html {
   color: white;
 }
 
-.card {
-    margin-top: 10px;
-    background-color: #353a3f;
-    color: white;
-}
-
-/* Tola resources CSS */
-
-input {
-    width: 130px;
-    transition: width 0.4s ease-in-out;
-}
-
-/* When the input field gets focus, change its width to 100% */
-input:focus {
-    width: 100%;
+#errorReport {
+    color: red;
+    padding: 5px;
 }
 
 .article-btn {
     margin: 5px;
 }
+
+.aboutTitle {
+    background: url("../images/Artboard1.png") no-repeat center top;
+    color: white;
+    margin: 30px;
+    padding: 55px 10px 70px;
+    text-align: center;
+}
+
+.aboutContainer {
+    color: white; 
+}
+
+.resourceContainer {
+    margin: 10px;
+    color: white;
+}
+
+table {
+    margin-bottom: 10%;
+}
+
+footer {
+    padding: 20px 0;
+    font-size: 12px;
+    /* z-index: 9; */
+    margin-top: 10%;
+    color: #ffffff;
+    text-align: center;
+    background: #353a3f;
+    border-top: 3px solid #53a451;
+    height: 30px;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    clear: both;
+  }
+
+  .advancedDetails {
+    padding-left: 20px;
+    color: White;
+    background: darkgray;
+    padding-bottom: 40px;
+    border: 5px solid #353a3f;
+    width: 50%;
+ }
+ 
+ .clearfix::after {
+    Content: "";
+    Display: block;
+    Clear: both;
+ }
+ 
+ 
+ #symbolLine {
+    font-size: 45px;
+ }
+ 
+ #companyName {
+    font-size: 20px;
+    text-decoration: underline;
+ }
+ 
+ #col-1 {
+    width: 5%;
+ }

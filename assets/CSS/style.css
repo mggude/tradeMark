@@ -6,6 +6,10 @@ body, html {
     position: relative;
 }
 
+.navbar {
+    border-bottom: solid black 2px;
+}
+
 h1, .navbar-brand {
     font-family: 'Roboto', sans-serif;
 }
@@ -51,10 +55,11 @@ img {
 
 .aboutContainer {
     color: white; 
+    padding-bottom: 40px;
 }
 
 .resourceContainer {
-    margin: 10px;
+    margin: 30px;
     color: white;
 }
 
@@ -63,19 +68,19 @@ table {
 }
 
 footer {
-    padding: 20px 0;
+    padding: 20px 10px;
     font-size: 12px;
     /* z-index: 9; */
-    margin-top: 10%;
+    /* margin-top: 10%; */
     color: #ffffff;
     text-align: center;
     background: #353a3f;
     border-top: 3px solid #53a451;
     height: 30px;
-    position:fixed;
-    bottom:0;
-    width:100%;
-    clear: both;
+    /* position:fixed; */
+    /* bottom:0; */
+    /* width:100%; */
+    /* clear: both; */
   }
 
   .advancedDetails {

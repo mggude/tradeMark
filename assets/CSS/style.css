@@ -6,8 +6,15 @@ body, html {
     position: relative;
 }
 
-h1 {
+h1, .navbar-brand {
     font-family: 'Roboto', sans-serif;
+}
+
+img {
+    float: left;
+    margin: 0 5px 5px 0;
+    height: 120px;
+    border: 2px solid #353a3f;
 }
 
 .hero-image {
@@ -17,8 +24,8 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  border: solid black 2px;
-  border-bottom-color: #353a3f;
+  border-top: solid black 2px;
+  border-bottom: solid #353a3f 2px;
 }
 
 .hero-text {
@@ -35,16 +42,11 @@ h1 {
     padding: 5px;
 }
 
-.article-btn {
-    margin: 5px;
-}
-
 .aboutTitle {
     background: url("../images/Artboard1.png") no-repeat center top;
     color: white;
     margin: 30px;
     padding: 55px 10px 70px;
-    text-align: center;
 }
 
 .aboutContainer {
@@ -79,9 +81,10 @@ footer {
   .advancedDetails {
     padding-left: 20px;
     color: White;
-    background: darkgray;
+    background: #353a3f;
     padding-bottom: 40px;
-    border: 5px solid #353a3f;
+    border: 3px solid #53a451;
+    border-radius: 10px;
     width: 50%;
  }
  

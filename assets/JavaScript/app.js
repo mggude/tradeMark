@@ -23,10 +23,15 @@ var openPrice;
 var volume;
 var exchange;
 
+$(document).ready(function () {
+    $("#advancedDetails").hide();
+});
+
 
 //Functions
 // SECTION: WATCHLIST TABLE
 $("#submitButton").on("click", function (event) {
+    $("#advancedDetails").show();
     event.preventDefault();
     var barchartAPIkey = 'b07ee9357cf8f37a122e8176286d33c7';
 
@@ -65,10 +70,12 @@ $("#submitButton").on("click", function (event) {
                 todayLow: todayLow,
             });
             $("#symbolInput").val("");
+            $("#errorReport").text(`You selected ${stockName}. The symbol for ${stockName} is ${symbol}. Today's high price for ${symbol} is ${todayHigh}, today's low is ${todayHigh}.`);
+            $('#errorReport').addClass("animated flash");
         }
         else {
             console.log("else part");
-            $("#errorReport").text("Please Enter A Valid Stock Symbol");
+            $("#errorReport").text("Please Enter A Valid Stock Symbol. For example, AAPL is the symbol for Apple. MSFT is the symbol for Microsoft.");
             $('#errorReport').addClass("animated flash");
         }
     });
@@ -125,7 +132,7 @@ $("#stockStories").on("click", function () {
             articleDiv.append(image);
 
             var title = result.results[i].title;
-            var pOne = $("<p>").text("Tile: " + title);
+            var pOne = $("<p>").text(title);
             articleDiv.append(pOne);
 
             var abstract = result.results[i].abstract;
@@ -133,7 +140,8 @@ $("#stockStories").on("click", function () {
             articleDiv.append(pTwo);
 
             var url = result.results[i].url;
-            var pThree = $("<p>").text("Website: " + url);
+            var result = url.link(url);
+            var pThree = $("<p>").html(result);
 
             articleDiv.append(pThree);
             $("#articles-view").addClass("resourceContainer");

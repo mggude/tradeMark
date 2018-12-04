@@ -70,7 +70,7 @@ $("#submitButton").on("click", function (event) {
                 todayLow: todayLow,
             });
             $("#symbolInput").val("");
-            $("#errorReport").text(`You selected ${stockName}. The symbol for ${stockName} is ${symbol}. Today's high price for ${symbol} is ${todayHigh}, today's low is ${todayHigh}.`);
+            $("#errorReport").text(`You selected ${stockName}. The symbol for ${stockName} is ${symbol}. Today's high price for ${symbol} is $${todayHigh}, today's low is $${todayHigh}.`);
             $('#errorReport').addClass("animated flash");
         }
         else {
